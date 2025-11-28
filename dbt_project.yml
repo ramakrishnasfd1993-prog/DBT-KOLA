@@ -42,3 +42,5 @@ models:
       +materialized: table
     stagging:
       +materialized: view
+flags:
+  require_generic_test_arguments_property: true
