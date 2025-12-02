@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: raw
+    schema: PRACTICE_RAW
+    tables:
+      - name: branch
+      - name: college
+      - name : students

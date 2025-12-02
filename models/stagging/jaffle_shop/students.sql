@@ -5,4 +5,4 @@ select
     branch_name , 
     pass_percentage,
     college_name
-from raw.practice_raw.students
+from {{ source('jaffle_shop', 'students') }}

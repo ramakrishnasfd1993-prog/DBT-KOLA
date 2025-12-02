@@ -2,4 +2,4 @@
 select
     collge_name,  -- matches your DDL
     college_id
-from raw.practice_raw.college
+from {{ source('jaffle_shop', 'college') }}

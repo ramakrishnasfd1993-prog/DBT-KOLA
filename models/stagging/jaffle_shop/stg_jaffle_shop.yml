@@ -17,17 +17,19 @@ models:
       - name: status
         tests:
           - accepted_values:
-              values:
-                - completed
-                - shipped
-                - returned
-                - return_pending
-                - placed
+              arguments:
+                values:
+                  - completed
+                  - shipped
+                  - returned
+                  - return_pending
+                  - placed
       - name: customer_id
         tests:
           - relationships:
-              field: customer_id
-              to: ref('stg_jaffle_shop__customers')
+              arguments:
+                field: customer_id
+                to: ref('stg_jaffle_shop__customers')
   - name: students
     description: "stagging model for students"
     columns:
@@ -42,10 +44,11 @@ models:
       - name: branch_name
         tests:
           - accepted_values:
-              values:
-                - MECH
-                - CSE
-                - ECE
-                - IT
-                - CIVIL
-                - EEE
+              arguments:
+                values:
+                  - MECH
+                  - CSE
+                  - ECE
+                  - IT
+                  - CIVIL
+                  - EEE
