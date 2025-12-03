@@ -5,6 +5,16 @@ sources:
     database: raw
     schema: PRACTICE_RAW
     tables:
-      - name: branch
+      - name: students
       - name: college
-      - name : students
+      - name : branch
+        loaded_at_field: _BATCHED_AT
+        freshness: 
+          error_after:
+            count: 12
+            period: hour
+          warn_after:
+            count: 5
+            period: hour
+        
+
