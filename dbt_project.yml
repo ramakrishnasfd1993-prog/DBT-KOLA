@@ -49,6 +49,7 @@ models:
     # -------- MARTS --------
     marts:
       +materialized: table
+      +tags : ["High"]
       pre-hook:
         - "insert into RAW.JAFFLE_SHOP.DBT_AUDITS (audit_type) values ('marts_model_start')"
       post-hook:
