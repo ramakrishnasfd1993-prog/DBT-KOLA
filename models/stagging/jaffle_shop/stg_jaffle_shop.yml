@@ -52,9 +52,13 @@ models:
           - accepted_values:
               arguments:
                 values:
-                  - MECH
                   - CSE
+                  - EE
                   - ECE
                   - IT
+                  - MECH
+                  - IT
                   - CIVIL
-                  - EEE
+                  - AERONAUTICAL
+                  - DATA SCIENCE
+                  
