@@ -33,26 +33,26 @@ models:
     # -------- STAGING --------
     stagging:
       +materialized: view 
-      pre-hook:
+      +pre-hook:
         - "insert into RAW.JAFFLE_SHOP.DBT_AUDITS (audit_type) values ('stagging_model_start')"
-      post-hook:
+      +post-hook:
         - "insert into RAW.JAFFLE_SHOP.DBT_AUDITS (audit_type) values ('stagging_model_end')"
 
     # -------- EXAMPLE --------
     example:
       +materialized: table
-      pre-hook:
+      +pre-hook:
         - "insert into RAW.JAFFLE_SHOP.DBT_AUDITS (audit_type) values ('example_model_start')"
-      post-hook:
+      +post-hook:
         - "insert into RAW.JAFFLE_SHOP.DBT_AUDITS (audit_type) values ('example_model_end')"
 
     # -------- MARTS --------
     marts:
       +materialized: table
       +tags : ["High"]
-      pre-hook:
+      +pre-hook:
         - "insert into RAW.JAFFLE_SHOP.DBT_AUDITS (audit_type) values ('marts_model_start')"
-      post-hook:
+      +post-hook:
         - "insert into RAW.JAFFLE_SHOP.DBT_AUDITS (audit_type) values ('marts_model_end')"
 
 flags:
