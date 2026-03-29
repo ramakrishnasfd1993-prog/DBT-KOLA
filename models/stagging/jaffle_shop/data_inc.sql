@@ -1,15 +1,21 @@
-{{ config(
-    materialized = 'incremental',
-    incremental_strategy = 'merge',
-    unique_key = 'D_DATE'
-) }}
+{{
+    config(
+        materialized='incremental',
+        incremental_strategy = 'merge',
+        unique_key = 'ticket_id'
+    )
+}}
 
-select *
-from raw.jaffle_shop.incremental_table
+select ticket_id,
+       ticket_status,
+       last_updated_at,
+       last_updated_at_ts
+from {{ source('jaffle_shop', 'tickets') }}
 
 {% if is_incremental() %}
-where D_DATE >= (
-    select dateadd(day, -7, max(D_DATE))
+where last_updated_at >= (
+    select dateadd(day,-7,max(last_updated_at))
     from {{ this }}
 )
+
 {% endif %}

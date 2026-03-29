@@ -8,6 +8,7 @@ sources:
       - name: students
       - name: college
       - name : branch
+      - name : tickets
         config:
          loaded_at_field: _BATCHED_AT
          freshness: 
