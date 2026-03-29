@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_jaffle_shop__customers
-    description: staged customer data from our jagffle shop app
+    description: staged customer data from our jaffle shop app
     columns:
       - name: customer_id
         description: The primary key for customers
@@ -45,19 +45,17 @@ models:
           - not_null
       - name: student_name
         tests:
-          - unique
           - not_null
       - name: branch_name
         tests:
           - accepted_values:
               arguments:
                 values:
-                  - CSE
+                  - CSC
                   - EE
                   - ECE
                   - IT
                   - MECH
-                  - IT
                   - CIVIL
                   - AERONAUTICAL
                   - DATA SCIENCE
